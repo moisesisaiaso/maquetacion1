@@ -1,0 +1,269 @@
+/** DEFINICIÓN VARIABLES  */
+:root {
+    --color-principal: #ffffff;
+    --color-secondary: #04b4e0;
+    --color-background: #f2f7f9;
+    --color-transparent: transparent;
+    --color-icon: #b5b6b7;
+    --color-subtitle: #888888;
+    --color-title: #222222;
+    --color-text: #555555;
+}
+
+/** ESTILOS GENERALES */
+
+html {
+    font-size: 9px;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-background);
+    font-family: "Poppins", Helvetica, sans-serif; /** esta es una fuente personalizada que se la vinculó al html desde otro archivo css llamado   poppins.css por eso podemos utilizarla aquí*/
+
+    background-image: url("../img/fondo.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: -20px -120px;
+    font-size: 1.5rem;
+    color: var(--color-text);
+    overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--color-title);
+}
+
+/** ESTRUCTURA PRINCIPAL  */
+.layout {
+    position: relative;
+    display: grid;
+    min-width: 1120px;
+    width: 75%;
+    height: 80vh;
+    min-height: 85vh;
+    margin: 10vh 6.2%;
+    grid-template-columns: 30% 70%;
+    grid-template-areas: "layoutAside layoutContent";
+    box-shadow: 0px 0px 100px -5px rgba(0, 0, 0, 0.25);
+    border-radius: 4rem;
+}
+/** Barra lateral azul */
+.layout__aside {
+    font-weight: 400;
+    grid-area: layoutAside;
+    box-shadow: 0px 0px 50px rgb(226, 211, 211);
+    border-radius: 4rem 0 0 4rem;
+    overflow-x: hidden;
+}
+
+.aside__user_info {
+    min-width: 30rem;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--color-secondary);
+    color: var(--color-principal);
+}
+
+.user_info__container_image {
+    position: relative;
+    width: 18rem;
+    height: 18rem;
+    margin-top: 7rem;
+    margin: 7rem auto 2.6rem auto;
+    z-index: 1;
+}
+
+.user_info__image {
+    width: 100%;
+    border: 3px solid var(--color-principal);
+    background-color: var(
+        --color-principal
+    ); /* por si acaso no se carga la imagen que salga un fondo blanco */
+    border-radius: 30rem;
+}
+
+/*^ seudoElemento */
+/* Un seudoelemento es un hijo, el utlimo hijo de la caja donde quiero aplicar ese seudoelemento que se suele utilizar para contenido estetico o que no forma realmente parte del html, cuando utilizamos seudoelementos no podemos tener un contenedor en hidden si es un elemento que sobresale el espacio del contenedor ya que sigue siendo un seudoelemento hijo que al final tambien se ocultaria si sobresale */
+.user_info__container_image::after {
+    content: "";
+    position: absolute;
+    top: 5%;
+    left: 9%;
+    width: 100%;
+    height: 100%;
+    background-image: -webkit-repeating-radial-gradient(
+        center center,
+        #fff,
+        #fff 1px,
+        transparent 0px,
+        transparent 100%
+    ); /* ? esta es una funcion que me permite crear un degradado con puntitos */
+    background-size: 0.6rem 0.6rem;
+    border-radius: 30rem;
+    opacity: 0.4;
+    z-index: -1;
+}
+
+/** object-fit: ; esta propiedad permite ajustar la imagen al layout cover: no le importa si se deforma, contain: mantiene la relación de aspecto es decir no se deforma */
+
+.user_info__general {
+    text-align: center;
+}
+.user_info__name {
+    font-family: "PoppinsMedium";
+    font-size: 3.2rem;
+    font-weight: 500;
+    color: var(--color-principal);
+}
+
+.user_info__job {
+    color: var(--color-principal);
+    font-size: 1.7rem;
+    font-weight: 200;
+}
+
+.user_info__links {
+    margin-bottom: 3.6rem;
+}
+
+.links__social {
+    display: flex;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.social__option {
+    font-size: 1.8rem;
+    height: 3rem;
+    width: 3rem;
+    line-height: 3.2rem;
+    opacity: 0.9;
+    transition: all 300ms ease-in-out;
+}
+
+.social__option:hover {
+    opacity: 1;
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.3);
+    border-radius: 30rem;
+}
+
+.user_info__curriculum {
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+}
+
+.user_info__btn {
+    padding: 1.3rem 3rem;
+    border: 1px solid var(--color-principal);
+    border-radius: 3.2rem;
+    box-shadow: 0 10px 10px -8px rgba(0, 0, 0, 0.22); /* el cuarto parametro -8px despues del difuminado sirve para la expansión de la sombra si la queremos expandir mas o recoger */
+    transition: all 300ms ease-in-out;
+}
+
+.user_info__btn:hover {
+    background-color: var(--color-principal);
+    color: var(--color-secondary);
+}
+
+.user_info__footer {
+    position: absolute;
+    bottom: 2rem;
+    font-size: 1.2rem;
+}
+
+/** Contenedor principal  */
+.layout__content {
+    grid-area: layoutContent;
+    background-color: var(--color-secondary);
+    border-radius: 0 4rem 4rem 0;
+}
+
+.content__page {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-principal);
+    border-radius: 4rem;
+}
+
+.page__name {
+    font-size: 6rem;
+    margin-bottom: 1rem;
+}
+
+.page__job {
+    font-size: 3rem;
+    font-weight: lighter;
+    color: var(--color-subtitle);
+}
+
+/**  MENU NAVEGACIÓN LATERAL*/
+/* position: absolute para ubicar la barra de navegación fuera de la plantilla */
+.layout__menu {
+    display: block;
+    position: absolute;
+    top: 0;
+    min-width: 11rem;
+    right: -95px;
+    background-color: transparent;
+}
+
+/*? se aplican los estilos en este contenedor para separar los estilos del contenido en este formato de escritorio y al momento de tener un responsive el formato de celular tendrá aculto este contenedor ya que no se lo utilizará si se le aplicara al padre de este elemento entonces ambos formatos responsives tendrían los mismo estilos que interfieren  */
+.menu__list {
+    position: relative;
+    width: 60%;
+    height: 32rem;
+    margin-left: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-radius: 4rem;
+    background-color: var(--color-principal);
+    box-shadow: 0 0 3rem -0.5rem rgba(0, 0, 0, 0.15);
+}
+.menu__option {
+    width: 100%;
+    text-align: center;
+}
+
+/*? para ocultar el texto del menú simplemente se estructuró en el html el texto dentro de un spam que ahora podemos ocultal con el display:none */
+
+.menu__icon {
+    color: var(--color-icon);
+    font-size: 2.8rem;
+    transition: all 300ms ease-in-out;
+}
+
+.menu__option:hover .menu__icon {
+    color: var(--color-secondary);
+}
+
+.menu__overlay {
+    position: absolute;
+    opacity: 0;
+    right: 0%;
+    margin-top: -3.4rem;
+    display: block;
+    white-space: nowrap; /* esta es un propiedad que permite hacer que no hayan saltos de lineas */
+    padding: 0.5rem 1rem;
+    background-color: var(--color-secondary);
+    transition: all 300ms ease-in-out;
+}
+
+.menu__option:hover .menu__overlay {
+    opacity: 1;
+    right: 100%; /* esto aplica el 100% del ancho como margen hacia la hizquierda del elemento lo que hace que salga del contenedor */
+}

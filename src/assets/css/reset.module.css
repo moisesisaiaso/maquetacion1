@@ -1,0 +1,61 @@
+* {
+    padding: 0;
+    margin: 0;
+    vertical-align: baseline; /* esta propiedad alinea el texto por defecto ya viene con el valor baseline que es el texto alineado normal */
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    height: 100vh;
+    scroll-behavior: smooth; /* sirve para el comportamiento del scroll la propiedad smooth brinda un suavizado al desbordamiento de desplazamiento  */
+    text-rendering: optimizeSpeed; /* indica que el motor de renderizado debe priorizar la velocidad de renderizado del texto sobre la legibilidad y la precisión geométrica. */
+    line-height: 1.5; /* es para establecer una altura de linea entre texto, es como poner un interlineado */
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+    font-family: inherit; /* * el valor inherit se utiliza para heredar el valor de la propiedad del elemento padre.  */
+    font-size: inherit;
+    color: inherit;
+}
+
+p a {
+    display: inline; /* esto va a permitir que en caso de que haya un enlace dentro de un parrafo no se realice un salto de linea, por defecto los elementos vienen con el valor block es decir ocupan el ancho total y por este motivo los elementos que se saltan, mientras que el valor inline solo ocupa el ancho del contenido del elemento */
+}
+
+img,
+video,
+iframe,
+picture,
+figure {
+    max-width: 100%; /* se establece a la imgen un ancho maximo que puede ser del 100%(representa el ancho total del contenedor de esta forma la imagen se ajusta al contenedor) */
+    display: block;
+}
+
+form,
+input,
+select,
+textarea,
+button,
+label {
+    display: block;
+    font-family: inherit; /* * el valor inherit se utiliza para heredar el valor de la propiedad del elemento padre.  */
+    font-size: inherit;
+    color: inherit;
+}
