@@ -1,7 +1,26 @@
 import { useState } from "react";
 import inicioStyles from "./assets/css/inicio.module.css";
 import miFoto from "./assets/img/default-user2.jpg";
+
+import HomePageComponent from "./components/HomePageComponent";
+import SobreMiComponent from "./components/SobreMiComponent";
 function App() {
+    const [page, setPage] = useState("HomePageComponent");
+
+    const handleClick = (component) => {
+        setPage(component);
+    };
+
+    const pages = {
+        HomePageComponent,
+        SobreMiComponent,
+    };
+
+    const PageComponent = pages[page];
+    /* Se tiene que hacer de esta forma ya que no se puede cambiar la estructura de un componente de esta forma se mantiene y la variable que representa a los posibles componentes tiene el formato de un nombre de componente habitual*/
+
+    /* aunque si se puede poner el objeto del componente en esta variable no tiene sentido por que es solo como cambiarle el nombre al componente y cuando queremos dinamizar lo que viene en esta variable esta es la forma correcta ya que poner solo pages como una variable que recibe directamente el objeto en sí  es como poner otra variable dentro de otra para recibir recien un valor esto causa error y por eso en se le da directamente el valor a la variable atraves de el nombre de la propiedad que contienen los objetos de componente*/
+
     return (
         <>
             {/* <!--^ Layput principal --> */}
@@ -28,7 +47,12 @@ function App() {
                         <nav className={inicioStyles.layout__menu}>
                             <ul className={inicioStyles.menu__list}>
                                 <li className={inicioStyles.menu__option}>
-                                    <a href="index.html" className={inicioStyles.menu__link}>
+                                    {/* OJO: Existe un problema cuando manda a llamar una función dentro de un onclick en estos casos si el evento no tien la función de flecha al renderizarse el componente siempre va a ejecutar todo lo que esté en las llaves así sea que no haya sido presionada o activado el evento y por esto puede causar un re-renders  o renderizado infinito */}
+                                    <a
+                                        href="#"
+                                        className={inicioStyles.menu__link}
+                                        onClick={() => handleClick("HomePageComponent")}
+                                    >
                                         <i
                                             className={`${inicioStyles.menu__icon}   fa-solid fa-house`}
                                         ></i>
@@ -36,7 +60,11 @@ function App() {
                                     </a>
                                 </li>
                                 <li className={inicioStyles.menu__option}>
-                                    <a href="sobre-mi.html" className={inicioStyles.menu__link}>
+                                    <a
+                                        href="#"
+                                        className={inicioStyles.menu__link}
+                                        onClick={() => handleClick("SobreMiComponent")}
+                                    >
                                         <i
                                             className={`${inicioStyles.menu__icon} fa-solid fa-user
                                                 `}
@@ -103,8 +131,7 @@ function App() {
                                 <li className={inicioStyles.social__option}>
                                     <a href="#" className={inicioStyles.social__link}>
                                         <i
-                                            className={`
-                                                ${inicioStyles.social__icon} fa-brands fa-linkedin
+                                            className={`${inicioStyles.social__icon} fa-brands fa-linkedin
                                             `}
                                         ></i>
                                     </a>
@@ -113,8 +140,7 @@ function App() {
                                     <a href="#" className={inicioStyles.social__link}>
                                         <i
                                             className={`
-                                                ${inicioStyles.social__icon} fa-brands fa-instagram
-                                               `}
+                                                ${inicioStyles.social__icon} fa-brands fa-instagram`}
                                         ></i>
                                     </a>
                                 </li>
@@ -135,8 +161,8 @@ function App() {
 
                 <main className={inicioStyles.layout__content}>
                     <section className={inicioStyles.content__page}>
-                        <h1 className={inicioStyles.page__name}>MOISES ORTIZ</h1>
-                        <p className={inicioStyles.page__job}>Desarrolador Web</p>
+                        <PageComponent />
+                        {/* {page == true ? <HomePageComponent /> : <SobreMiComponent />} */}
                     </section>
                 </main>
             </div>
