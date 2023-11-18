@@ -174,7 +174,9 @@ function App() {
                                 : inicioStyles.content__page
                         }
                     >
-                        <PageComponent />
+                        <div className={inicioStyles.content__page_scrolling}>
+                            <PageComponent />
+                        </div>
                         {/* {page == true ? <HomePageComponent /> : <SobreMiComponent />} */}
                     </section>
                 </main>

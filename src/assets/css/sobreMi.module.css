@@ -7,6 +7,7 @@
 
 .sobre_mi__titulo {
     width: 100%;
+    margin-bottom: 15px;
 }
 
 .sobre_mi__description {
@@ -18,14 +19,10 @@
 
 .sobre_mi__description,
 .sobre_mi__infoPersonal {
-    flex-basis: 200px; /* es el tamaño inicial de un elemento antes de que se apliquen la propiedad flex-grow o flex-shrink que es como el inverso de flex-grow */
+    flex-basis: 150px; /* es el tamaño inicial de un elemento antes de que se apliquen la propiedad flex-grow o flex-shrink que es como el inverso de flex-grow */
     /** de esta manera cuendo tengo elementos que superar el ancho del contenedor es decir no existe espacio sobrante del contenedor y por tanto flex-grow no va a funcionar ya que depende del espacio sobrande para el facto de crecimiento, con flex-basis establezco un ancho inicial de los elementos para que ocupen en menor espacio si así conviene y poder tener un espacio restante con el que pueda jugar para el factor de crecimiento o simplemente puedo utilizar flex-shrink */
 }
 .sobre_mi__resaltar,
 .infoPersonal__resaltar {
     color: var(--color-secondary);
-}
-
-.sobre_mi__titulo {
-    margin-bottom: 15px;
 }
