@@ -1,4 +1,7 @@
 import { useState } from "react";
+import { Helmet } from "react-helmet";
+/* esta librería permite poner etiquetas de metadatos como normalemnte se haría en html -  yarn add react-helmet
+ */
 import inicioStyles from "./assets/css/inicio.module.css";
 import miFoto from "./assets/img/default-user2.jpg";
 
@@ -17,12 +20,16 @@ function App() {
     };
 
     const PageComponent = pages[page];
+
     /* Se tiene que hacer de esta forma ya que no se puede cambiar la estructura de un componente de esta forma se mantiene y la variable que representa a los posibles componentes tiene el formato de un nombre de componente habitual*/
 
     /* aunque si se puede poner el objeto del componente en esta variable no tiene sentido por que es solo como cambiarle el nombre al componente y cuando queremos dinamizar lo que viene en esta variable esta es la forma correcta ya que poner solo pages como una variable que recibe directamente el objeto en sí  es como poner otra variable dentro de otra para recibir recien un valor esto causa error y por eso en se le da directamente el valor a la variable atraves de el nombre de la propiedad que contienen los objetos de componente*/
 
     return (
         <>
+            <Helmet>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            </Helmet>
             {/* <!--^ Layput principal --> */}
             <div className={inicioStyles.layout}>
                 {/* <!--^ barra lateral (info usuario) --> */}
@@ -160,7 +167,13 @@ function App() {
                 </aside>
 
                 <main className={inicioStyles.layout__content}>
-                    <section className={inicioStyles.content__page}>
+                    <section
+                        className={
+                            page === "HomePageComponent"
+                                ? inicioStyles.content__page_home
+                                : inicioStyles.content__page
+                        }
+                    >
                         <PageComponent />
                         {/* {page == true ? <HomePageComponent /> : <SobreMiComponent />} */}
                     </section>
