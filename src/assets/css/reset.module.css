@@ -36,7 +36,7 @@ a {
 }
 
 p a {
-    display: inline; /* esto va a permitir que en caso de que haya un enlace dentro de un parrafo no se realice un salto de linea, por defecto los elementos vienen con el valor block es decir ocupan el ancho total y por este motivo los elementos que se saltan, mientras que el valor inline solo ocupa el ancho del contenido del elemento */
+    display: inline; /* esto va a permitir que en caso de que haya un enlace dentro de un parrafo no se realice un salto de linea, por defecto los elementos vienen con el valor block es decir ocupan el ancho total y por este motivo los elementos que se saltan, mientras que el valor inline solo ocupa el ancho del contenido del elemento y permite que otros elementos se ubiquen alado*/
 }
 
 img,

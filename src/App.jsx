@@ -80,7 +80,7 @@ function App() {
                                     </a>
                                 </li>
                                 <li className={inicioStyles.menu__option}>
-                                    <a href="estudios.html" className={inicioStyles.menu__link}>
+                                    <a href="#" className={inicioStyles.menu__link}>
                                         <i
                                             className={`
                                                 ${inicioStyles.menu__icon} fa-solid fa-graduation-cap
@@ -90,7 +90,7 @@ function App() {
                                     </a>
                                 </li>
                                 <li className={inicioStyles.menu__option}>
-                                    <a href="portafolio.html" className={inicioStyles.menu__link}>
+                                    <a href="#" className={inicioStyles.menu__link}>
                                         <i
                                             className={`
                                                 ${inicioStyles.menu__icon} fa-solid fa-briefcase
@@ -102,7 +102,7 @@ function App() {
                                     </a>
                                 </li>
                                 <li className={inicioStyles.menu__option}>
-                                    <a href="blog.html" className={inicioStyles.menu__link}>
+                                    <a href="#" className={inicioStyles.menu__link}>
                                         <i
                                             className={`
                                                 ${inicioStyles.menu__icon} fa-solid fa-book
@@ -112,7 +112,7 @@ function App() {
                                     </a>
                                 </li>
                                 <li className={inicioStyles.menu__option}>
-                                    <a href="contacto.html" className={inicioStyles.menu__link}>
+                                    <a href="#" className={inicioStyles.menu__link}>
                                         <i
                                             className={`
                                                 ${inicioStyles.menu__icon} fa-solid fa-envelope
@@ -174,10 +174,13 @@ function App() {
                                 : inicioStyles.content__page
                         }
                     >
-                        <div className={inicioStyles.content__page_scrolling}>
+                        {page == "HomePageComponent" ? (
                             <PageComponent />
-                        </div>
-                        {/* {page == true ? <HomePageComponent /> : <SobreMiComponent />} */}
+                        ) : (
+                            <div className={inicioStyles.content__page_scrolling}>
+                                <PageComponent />
+                            </div>
+                        )}
                     </section>
                 </main>
             </div>

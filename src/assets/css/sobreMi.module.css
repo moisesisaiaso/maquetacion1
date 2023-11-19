@@ -1,13 +1,17 @@
+/** SOBRE MI  */
 .page__sobre_mi {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    gap: 15px;
+    column-gap: 15px;
 }
 
 .sobre_mi__titulo {
     width: 100%;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
+    font-size: 3rem;
+    font-family: "PoppinsMedium";
+    font-weight: 500;
 }
 
 .sobre_mi__description {
@@ -22,7 +26,47 @@
     flex-basis: 150px; /* es el tamaño inicial de un elemento antes de que se apliquen la propiedad flex-grow o flex-shrink que es como el inverso de flex-grow */
     /** de esta manera cuendo tengo elementos que superar el ancho del contenedor es decir no existe espacio sobrante del contenedor y por tanto flex-grow no va a funcionar ya que depende del espacio sobrande para el facto de crecimiento, con flex-basis establezco un ancho inicial de los elementos para que ocupen en menor espacio si así conviene y poder tener un espacio restante con el que pueda jugar para el factor de crecimiento o simplemente puedo utilizar flex-shrink */
 }
+
+.infoPersonal__info {
+    line-height: 27px;
+}
+
+.infoPersonal__resaltar {
+    font-family: "PoppinsMedium";
+    font-weight: 500;
+}
 .sobre_mi__resaltar,
 .infoPersonal__resaltar {
     color: var(--color-secondary);
+}
+
+/*? Lo que hago  */
+
+.page__mas {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    column-gap: 35px;
+}
+
+.mas__subtitle {
+    width: 100%;
+    margin-bottom: 15px;
+    margin-top: 30px;
+    font-family: "PoppinsMedium";
+    font-weight: 500;
+}
+
+.mas__resaltar {
+    color: var(--color-secondary);
+}
+.mas__actividades {
+    flex-basis: 150px; /* funciona similar al width solo que en este le damos el tamaño inicial a los elementos que tienen un fator de crecimiento es mas adecuado */
+    flex-grow: 1;
+    text-align: justify;
+}
+
+.actividades__icon {
+    color: var(--color-secondary);
+    font-size: 3rem;
 }

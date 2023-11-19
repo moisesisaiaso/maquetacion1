@@ -16,21 +16,21 @@ export const SobreMiComponent = () => {
                 <article className={sobreMiStyles.sobre_mi__infoPersonal}>
                     <ul className={sobreMiStyles.infoPersonal__infoList}>
                         <li>
-                            <span className={sobreMiStyles.infoPersonal__resaltar}>Edad</span> 25
+                            <span className={sobreMiStyles.infoPersonal__resaltar}>Edad </span> 25
                         </li>
-                        <li>
-                            <span className={sobreMiStyles.infoPersonal__resaltar}>País</span>{" "}
+                        <li className={sobreMiStyles.infoPersonal__info}>
+                            <span className={sobreMiStyles.infoPersonal__resaltar}>País </span>{" "}
                             Ecuador
                         </li>
-                        <li>
+                        <li className={sobreMiStyles.infoPersonal__info}>
                             <span className={sobreMiStyles.infoPersonal__resaltar}>Dirección</span>{" "}
                             Lorem ipsum dolor sit amet.
                         </li>
-                        <li>
+                        <li className={sobreMiStyles.infoPersonal__info}>
                             <span className={sobreMiStyles.infoPersonal__resaltar}>Correo</span>{" "}
                             moises@gmail.com
                         </li>
-                        <li>
+                        <li className={sobreMiStyles.infoPersonal__info}>
                             <span className={sobreMiStyles.infoPersonal__resaltar}>Telefono</span>{" "}
                             0968478460
                         </li>
@@ -38,36 +38,35 @@ export const SobreMiComponent = () => {
                 </article>
             </section>
 
-            <section className="page__mas">
-                <h2>
-                    Lo que <span>hago</span>
+            <section className={sobreMiStyles.page__mas}>
+                <h2 className={sobreMiStyles.mas__subtitle}>
+                    Lo que <span className={sobreMiStyles.mas__resaltar}>hago</span>
                 </h2>
-                <article className="mas__actividades">
-                    <i className={`${sobreMiStyles.actividades__icon_code} fa fa-code`}></i>
+                <article className={sobreMiStyles.mas__actividades}>
+                    <i className={`${sobreMiStyles.actividades__icon} fa fa-code`}></i>
                     <h3>Programación</h3>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. A voluptatum,
-                        neque, aliquid dolorum ab quaerat cum totam illo aspernatur dicta qui animi
-                        dolorem debitis nesciunt fuga consequatur iste voluptas et culpa nam.
-                        Ratione ex voluptates laboriosam quae natus fuga quidem. Lorem ipsum dolor
-                        sit amet consectetur adipisicing elit. Ad inventore vel harum vitae animi
-                        excepturi quas reprehenderit nulla repudiandae unde, veniam labore optio
-                        adipisci voluptatibus. Commodi rem sed voluptate. Veniam, accusantium
-                        maiores? Exercitationem nisi fugiat non quisquam sit illum reiciendis hic
-                        laboriosam distinctio saepe, tenetur molestiae totam amet mollitia qui.
+                        Lorem ipsum dolor sit amet consectetur elit. A voluptatum, neque, aliquid
+                        dolorum ab quaerat cum totam illo aspernatur dicta qui animi dolorem debitis
+                        nesciunt fuga consequatur iste voluptas et culpa nam. Ratione ex voluptates
+                        laboriosam quae natus fuga quidem. Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit. Ad inventore vel harum vitae animi excepturi quas
+                        reprehenderit nulla repudiandae unde, veniam labore optio adipisci
+                        voluptatibus. Commodi rem sed voluptate. Veniam, accusantium maiores?
+                        Exercitationem nisi fugiat non quisquam sit illum reiciendis hic laboriosam
+                        distinctio saepe, tenetur molestiae totam amet mollitia qui.
                     </p>
                 </article>
-                <article className="mas__actividades">
+                <article className={sobreMiStyles.mas__actividades}>
                     <i
-                        className={`${sobreMiStyles.actividades__icon_student} fa fa-chalkboard-teacher`}
+                        className={`${sobreMiStyles.actividades__icon} fa fa-chalkboard-teacher`}
                     ></i>
                     <h3>Estudiar</h3>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur
-                        blanditiis doloribus commodi consequuntur voluptatem reprehenderit sapiente
-                        accusantium eos nihil rem ratione vero cum magnam, est enim et. Delectus
-                        assumenda optio voluptates molestias, sapiente sed laboriosam nihil! Ex
-                        quaerat et officia?
+                        Lorem ipsum dolor sit amet, adipisicing elit. Consequatur blanditiis
+                        doloribus commodi consequuntur voluptatem reprehenderit sapiente accusantium
+                        eos nihil rem ratione vero cum magnam, est enim et. Delectus assumenda optio
+                        voluptates molestias, sapiente sed laboriosam nihil! Ex quaerat et officia?
                     </p>
                 </article>
             </section>
