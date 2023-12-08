@@ -1,12 +1,12 @@
 /** SOBRE MI  */
-.page__sobre_mi {
+.page__about {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
     column-gap: 15px;
 }
 
-.sobre_mi__titulo {
+.about__titulo {
     width: 100%;
     margin-bottom: 30px;
     font-size: 3rem;
@@ -14,59 +14,95 @@
     font-weight: 500;
 }
 
-.sobre_mi__description {
+.about__description {
     flex-grow: 2;
 }
-.sobre_mi__infoPersonal {
+.about__personalInfo {
     flex-grow: 1;
 }
 
-.sobre_mi__description,
-.sobre_mi__infoPersonal {
+.about__description,
+.about__personalInfo {
     flex-basis: 150px; /* es el tamaño inicial de un elemento antes de que se apliquen la propiedad flex-grow o flex-shrink que es como el inverso de flex-grow */
     /** de esta manera cuendo tengo elementos que superar el ancho del contenedor es decir no existe espacio sobrante del contenedor y por tanto flex-grow no va a funcionar ya que depende del espacio sobrande para el facto de crecimiento, con flex-basis establezco un ancho inicial de los elementos para que ocupen en menor espacio si así conviene y poder tener un espacio restante con el que pueda jugar para el factor de crecimiento o simplemente puedo utilizar flex-shrink */
 }
 
-.infoPersonal__info {
+.personalInfo__info {
     line-height: 27px;
 }
 
-.infoPersonal__resaltar {
+.personalInfo__title {
     font-family: "PoppinsMedium";
     font-weight: 500;
+    margin-right: 1rem;
 }
-.sobre_mi__resaltar,
-.infoPersonal__resaltar {
+.about__title,
+.personalInfo__title {
     color: var(--color-secondary);
 }
 
-/*? Lo que hago  */
+/*? Lo que hago  (servicios) */
 
-.page__mas {
+.page__services {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
     column-gap: 35px;
 }
 
-.mas__subtitle {
+.services__subtitle {
     width: 100%;
-    margin-bottom: 15px;
     margin-top: 30px;
     font-family: "PoppinsMedium";
     font-weight: 500;
 }
 
-.mas__resaltar {
+.services__title {
     color: var(--color-secondary);
 }
-.mas__actividades {
-    flex-basis: 150px; /* funciona similar al width solo que en este le damos el tamaño inicial a los elementos que tienen un fator de crecimiento es mas adecuado */
+.services__service {
+    flex-basis: 300px; /* funciona similar al width solo que en este le damos el tamaño inicial a los elementos que tienen un fator de crecimiento es services adecuado */
     flex-grow: 1;
     text-align: justify;
+    margin-top: 2rem;
 }
 
-.actividades__icon {
+.service__icon {
     color: var(--color-secondary);
     font-size: 3rem;
+}
+
+/*? testimonial (reviews)  */
+
+.page__reviews {
+    display: flex;
+}
+/* .reviews.container {
+    display: ;
+}
+ */
+
+.reviews__title {
+    font-family: "PoppinsMedium";
+    font-weight: 500;
+}
+
+/*? about-clients  */
+.clients__title {
+    font-family: "PoppinsMedium";
+    font-weight: 500;
+}
+
+/*? about-prices */
+
+.prices__title {
+    font-family: "PoppinsMedium";
+    font-weight: 500;
+}
+
+/*? about-extra */
+
+.extra__title {
+    font-family: "PoppinsMedium";
+    font-weight: 500;
 }

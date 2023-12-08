@@ -3,10 +3,12 @@ import { Helmet } from "react-helmet";
 /* esta librería permite poner etiquetas de metadatos como normalemnte se haría en html -  yarn add react-helmet
  */
 import inicioStyles from "./assets/css/inicio.module.css";
+import scrollStyles from "./assets/css/scroll.module.css";
 import miFoto from "./assets/img/default-user2.jpg";
+import documentoCv from "./assets/CV-MOISÉS-ORTIZ-GRACIA-F.pdf";
 
 import HomePageComponent from "./components/HomePageComponent";
-import SobreMiComponent from "./components/SobreMiComponent";
+import SobreMiComponent from "./components/about/SobreMiComponent";
 function App() {
     const [page, setPage] = useState("HomePageComponent");
 
@@ -155,7 +157,7 @@ function App() {
                         </div>
                         {/* <!--~ Botón del curriculum   --> */}
                         <div className={inicioStyles.user_info__curriculum}>
-                            <a href="#" className={inicioStyles.user_info__btn}>
+                            <a href={documentoCv} className={inicioStyles.user_info__btn} download>
                                 Descargar CV
                             </a>
                         </div>
@@ -171,13 +173,13 @@ function App() {
                         className={
                             page === "HomePageComponent"
                                 ? inicioStyles.content__page_home
-                                : inicioStyles.content__page
+                                : scrollStyles.content__page
                         }
                     >
                         {page == "HomePageComponent" ? (
                             <PageComponent />
                         ) : (
-                            <div className={inicioStyles.content__page_scrolling}>
+                            <div className={scrollStyles.content__page_scrolling}>
                                 <PageComponent />
                             </div>
                         )}
