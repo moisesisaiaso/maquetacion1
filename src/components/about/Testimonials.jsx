@@ -3,16 +3,16 @@ import PropTypes from "prop-types";
 export const Testimonials = ({ testimonial }) => {
     return (
         <>
-            <div className={sobreMiStyles.reviews__container}>
-                <article className={sobreMiStyles.reviews__review}>
-                    <div className={sobreMiStyles.review__img_container}>
-                        <img
-                            src={testimonial.image}
-                            alt="testimonio-image"
-                            className={sobreMiStyles.review__image}
-                        />
-                    </div>
+            <article className={sobreMiStyles.reviews__review}>
+                <div className={sobreMiStyles.review__img_container}>
+                    <img
+                        src={testimonial.image}
+                        alt="testimonio-image"
+                        className={sobreMiStyles.review__image}
+                    />
+                </div>
 
+                <div className={sobreMiStyles.review__descrip_aut}>
                     <div className={sobreMiStyles.review__description}>
                         <p className={sobreMiStyles.review__text}>{testimonial.description}</p>
                     </div>
@@ -29,8 +29,8 @@ export const Testimonials = ({ testimonial }) => {
                             ></i>
                         </div>
                     </div>
-                </article>
-            </div>
+                </div>
+            </article>
         </>
     );
 };

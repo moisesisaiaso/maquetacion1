@@ -35,7 +35,11 @@ function App() {
             {/* <!--^ Layput principal --> */}
             <div className={inicioStyles.layout}>
                 {/* <!--^ barra lateral (info usuario) --> */}
-                <aside className={inicioStyles.layout__aside}>
+                <aside
+                    className={
+                        inicioStyles.layout__aside + " " + scrollStyles.layout__aside_scrolling
+                    }
+                >
                     <section className={inicioStyles.aside__user_info}>
                         {/* <!--~ info general usuario  --> */}
                         <div className={inicioStyles.user_info__general}>
@@ -63,24 +67,22 @@ function App() {
                                         onClick={() => handleClick("HomePageComponent")}
                                     >
                                         <i
-                                            className={`${inicioStyles.menu__icon}   fa-solid fa-house`}
+                                            className={`${inicioStyles.menu__icon} fa-solid fa-house ${page === "HomePageComponent" && inicioStyles.menu__icon_active}`}
                                         ></i>
                                         <span className={inicioStyles.menu__overlay}>Home</span>
                                     </a>
                                 </li>
+                            
                                 <li className={inicioStyles.menu__option}>
-                                    <a
-                                        href="#"
-                                        className={inicioStyles.menu__link}
-                                        onClick={() => handleClick("SobreMiComponent")}
-                                    >
+                                    <a href="#" className={inicioStyles.menu__link} onClick={() => handleClick("SobreMiComponent")}>
                                         <i
-                                            className={`${inicioStyles.menu__icon} fa-solid fa-user
-                                                `}
+                                            className={`
+                                                ${inicioStyles.menu__icon} fa-solid fa-user ${page === "SobreMiComponent" && inicioStyles.menu__icon_active}`}
                                         ></i>
                                         <span className={inicioStyles.menu__overlay}>Sobre mi</span>
                                     </a>
                                 </li>
+
                                 <li className={inicioStyles.menu__option}>
                                     <a href="#" className={inicioStyles.menu__link}>
                                         <i
@@ -91,6 +93,7 @@ function App() {
                                         <span className={inicioStyles.menu__overlay}>Estudios</span>
                                     </a>
                                 </li>
+
                                 <li className={inicioStyles.menu__option}>
                                     <a href="#" className={inicioStyles.menu__link}>
                                         <i
@@ -103,6 +106,7 @@ function App() {
                                         </span>
                                     </a>
                                 </li>
+
                                 <li className={inicioStyles.menu__option}>
                                     <a href="#" className={inicioStyles.menu__link}>
                                         <i
@@ -113,6 +117,7 @@ function App() {
                                         <span className={inicioStyles.menu__overlay}>Blog</span>
                                     </a>
                                 </li>
+
                                 <li className={inicioStyles.menu__option}>
                                     <a href="#" className={inicioStyles.menu__link}>
                                         <i
@@ -162,6 +167,7 @@ function App() {
                             </a>
                         </div>
                         {/* <!--~ Pie de Página  --> */}
+
                         <footer className={inicioStyles.user_info__footer}>
                             &copy; 2024 Moisés Ortíz Gracia
                         </footer>

@@ -14,9 +14,9 @@ export const SobreMiComponent = () => {
         <>
             {/* sobre Mi */}
             <section className={sobreMiStyles.page__about}>
-                <h2 className={sobreMiStyles.about__titulo}>
-                    Sobre <span className={sobreMiStyles.about__title}>Mi</span>
-                </h2>
+                <h1 className={sobreMiStyles.about__title}>
+                    Sobre <span className={sobreMiStyles.about__title_color}>Mi</span>
+                </h1>
                 <article className={sobreMiStyles.about__description}>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum aut veniam,
                     voluptatibus cum repellendus commodi ullam in, ad quas dolorum a cumque. Amet
@@ -49,42 +49,48 @@ export const SobreMiComponent = () => {
 
             {/* Lo que hago */}
             <section className={sobreMiStyles.page__services}>
-                <h2 className={sobreMiStyles.services__subtitle}>
-                    Lo que <span className={sobreMiStyles.services__title}>hago</span>
+                <h2 className={sobreMiStyles.services__title}>
+                    Lo que <span className={sobreMiStyles.services__title_color}>hago</span>
                 </h2>
+
                 <article className={sobreMiStyles.services__service}>
                     <i className={`${sobreMiStyles.service__icon} fa fa-code`}></i>
-                    <h3>Programación</h3>
+                    <h3 className={sobreMiStyles.service__title}>Programación</h3>
                     <p>
                         Lorem ipsum dolor sit amet consectetur elit. A voluptatum, neque, aliquid
                         dolorum ab quaerat cum totam illo aspernatur dicta qui animi dolorem debitis
                         nesciunt fuga consequatur iste voluptas et culpa nam. Ratione ex voluptates
-                        laboriosam quae natus fuga quidem. Lorem ipsum dolor sit amet consectetur
-                        adipisicing elit. Ad inventore vel harum vitae animi excepturi quas
-                        reprehenderit nulla repudiandae unde, veniam labore optio adipisci
-                        voluptatibus. Commodi rem sed voluptate. Veniam, accusantium maiores?
-                        Exercitationem nisi fugiat non quisquam sit illum reiciendis hic laboriosam
-                        distinctio saepe, tenetur molestiae totam amet mollitia qui.
+                        laboriosam quae natus fuga quidem.
                     </p>
                 </article>
+
                 <article className={sobreMiStyles.services__service}>
                     <i className={`${sobreMiStyles.service__icon} fa fa-chalkboard-teacher`}></i>
-                    <h3>Estudiar</h3>
+                    <h3 className={sobreMiStyles.service__title}>Estudiar</h3>
                     <p>
                         Lorem ipsum dolor sit amet, adipisicing elit. Consequatur blanditiis
                         doloribus commodi consequuntur voluptatem reprehenderit sapiente accusantium
-                        eos nihil rem ratione vero cum magnam, est enim et. Delectus assumenda optio
-                        voluptates molestias, sapiente sed laboriosam nihil! Ex quaerat et officia?
+                        eos nihil rem ratione vero cum magnam, est enim et.
                     </p>
                 </article>
+
                 <article className={sobreMiStyles.services__service}>
-                    <i className={`${sobreMiStyles.service__icon} fa-solid fa-terminal`}></i>
-                    <h3>Administración</h3>
+                    <i className={`${sobreMiStyles.service__icon} fa fa-computer`}></i>
+                    <h3 className={sobreMiStyles.service__title}>Desarrollo Web</h3>
                     <p>
                         Lorem ipsum dolor sit amet, adipisicing elit. Consequatur blanditiis
                         doloribus commodi consequuntur voluptatem reprehenderit sapiente accusantium
-                        eos nihil rem ratione vero cum magnam, est enim et. Delectus assumenda optio
-                        voluptates molestias, sapiente sed laboriosam nihil! Ex quaerat et officia?
+                        eos nihil rem ratione vero cum magnam, est enim et.
+                    </p>
+                </article>
+
+                <article className={sobreMiStyles.services__service}>
+                    <i className={`${sobreMiStyles.service__icon} fa-solid fa-terminal`}></i>
+                    <h3 className={sobreMiStyles.service__title}>Administración</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, adipisicing elit. Consequatur blanditiis
+                        doloribus commodi consequuntur voluptatem reprehenderit sapiente accusantium
+                        eos nihil rem ratione vero cum magnam, est enim et.
                     </p>
                 </article>
             </section>
@@ -92,7 +98,10 @@ export const SobreMiComponent = () => {
             {/* testimonios */}
             <section className={sobreMiStyles.page__reviews}>
                 <header className={sobreMiStyles.reviews__header}>
-                    <h2 className={sobreMiStyles.reviews__title}> Reseñas</h2>
+                    <h2 className={sobreMiStyles.reviews__title}>
+                        {" "}
+                        <span className={sobreMiStyles.about__element_color}>Reseñas</span>
+                    </h2>
                 </header>
 
                 <div className={sobreMiStyles.reviews__container}>
@@ -105,7 +114,9 @@ export const SobreMiComponent = () => {
             {/* about-clients */}
             <section className={sobreMiStyles.page__clients}>
                 <header className={sobreMiStyles.clients__header}>
-                    <h2 className={sobreMiStyles.clients__title}>Clientes</h2>
+                    <h2 className={sobreMiStyles.clients__title}>
+                        <span className={sobreMiStyles.about__element_color}>Clientes</span>
+                    </h2>
                 </header>
 
                 <div className={sobreMiStyles.clients__container}>
@@ -118,7 +129,9 @@ export const SobreMiComponent = () => {
             {/* about-prices */}
             <section className={sobreMiStyles.page__prices}>
                 <header className={sobreMiStyles.prices__header}>
-                    <h2 className={sobreMiStyles.prices__title}>Precios</h2>
+                    <h2 className={sobreMiStyles.prices__title}>
+                        <span className={sobreMiStyles.about__element_color}>Precios</span>
+                    </h2>
                 </header>
 
                 <div className={sobreMiStyles.prices__container}>
@@ -132,7 +145,8 @@ export const SobreMiComponent = () => {
             <section className={sobreMiStyles.page__extra}>
                 <header className={sobreMiStyles.extra__header}>
                     <h2 className={sobreMiStyles.extra__title}>
-                        Información <span className={sobreMiStyles.about__title}>Extra</span>
+                        Información{" "}
+                        <span className={sobreMiStyles.services__title_color}>Extra</span>
                     </h2>
                 </header>
 

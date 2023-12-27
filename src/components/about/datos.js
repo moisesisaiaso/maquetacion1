@@ -10,13 +10,15 @@ import cliente5 from "../../assets/img/cliente-5.png";
 export const testimonials = [
     {
         image: testimonio1,
-        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti, facilis?",
+        description:
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti, facilis? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit sunt accusantium tempora. ",
         author: "Ana Peluche",
         company: "Developers S.A",
     },
     {
         image: testimonio2,
-        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti, facilis?",
+        description:
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti, facilis? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit sunt accusantium tempora. ",
         author: "Carlos José",
         company: "FullStack S.A",
     },
@@ -26,13 +28,13 @@ export const clients = [cliente1, cliente2, cliente3, cliente4, cliente5];
 
 export const prices = [
     {
-        type: "Normal",
+        type: "NORMAL",
         value: "$20",
         cursos: "Un curso de desarrollo web",
         extras: "Soporte a preguntas y dudas",
     },
     {
-        type: "Premium",
+        type: "PREMIUM",
         value: "$50",
         cursos: "Cinco cursos de desarrollo web",
         extras: "Soporte a preguntas y dudas prioritario",
