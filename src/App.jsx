@@ -9,6 +9,7 @@ import documentoCv from "./assets/CV-MOISÉS-ORTIZ-GRACIA-F.pdf";
 
 import HomePageComponent from "./components/HomePageComponent";
 import SobreMiComponent from "./components/about/SobreMiComponent";
+import CurriculumComponent from "./components/curriculum/CurriculumComponent";
 function App() {
     const [page, setPage] = useState("HomePageComponent");
 
@@ -19,6 +20,7 @@ function App() {
     const pages = {
         HomePageComponent,
         SobreMiComponent,
+        CurriculumComponent,
     };
 
     const PageComponent = pages[page];
@@ -67,30 +69,53 @@ function App() {
                                         onClick={() => handleClick("HomePageComponent")}
                                     >
                                         <i
-                                            className={`${inicioStyles.menu__icon} fa-solid fa-house ${page === "HomePageComponent" && inicioStyles.menu__icon_active}`}
+                                            className={`${
+                                                inicioStyles.menu__icon
+                                            } fa-solid fa-house ${
+                                                page === "HomePageComponent" &&
+                                                inicioStyles.menu__icon_active
+                                            }`}
                                         ></i>
                                         <span className={inicioStyles.menu__overlay}>Home</span>
                                     </a>
                                 </li>
-                            
+
                                 <li className={inicioStyles.menu__option}>
-                                    <a href="#" className={inicioStyles.menu__link} onClick={() => handleClick("SobreMiComponent")}>
+                                    <a
+                                        href="#"
+                                        className={inicioStyles.menu__link}
+                                        onClick={() => handleClick("SobreMiComponent")}
+                                    >
                                         <i
                                             className={`
-                                                ${inicioStyles.menu__icon} fa-solid fa-user ${page === "SobreMiComponent" && inicioStyles.menu__icon_active}`}
+                                                ${inicioStyles.menu__icon} fa-solid fa-user ${
+                                                page === "SobreMiComponent" &&
+                                                inicioStyles.menu__icon_active
+                                            }`}
                                         ></i>
                                         <span className={inicioStyles.menu__overlay}>Sobre mi</span>
                                     </a>
                                 </li>
 
                                 <li className={inicioStyles.menu__option}>
-                                    <a href="#" className={inicioStyles.menu__link}>
+                                    <a
+                                        href="#"
+                                        className={inicioStyles.menu__link}
+                                        onClick={() => handleClick("CurriculumComponent")}
+                                    >
                                         <i
                                             className={`
-                                                ${inicioStyles.menu__icon} fa-solid fa-graduation-cap
-                                            `}
+                                                ${
+                                                    inicioStyles.menu__icon
+                                                } fa-solid fa-graduation-cap
+                                                ${
+                                                    page === "CurriculumComponent" &&
+                                                    inicioStyles.menu__icon_active
+                                                }`}
                                         ></i>
-                                        <span className={inicioStyles.menu__overlay}>Estudios</span>
+                                        <span className={inicioStyles.menu__overlay}>
+                                            Curriculum
+                                        </span>
                                     </a>
                                 </li>
 

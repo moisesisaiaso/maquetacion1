@@ -1,0 +1,88 @@
+.page__title {
+    width: 100%;
+    margin-bottom: 30px;
+    font-size: 3.2rem;
+    font-family: "PoppinsMedium";
+    font-weight: 500;
+}
+
+.curriculum__subtitle {
+    width: 100%;
+    font-family: "PoppinsMedium";
+    font-weight: 500;
+}
+
+.curriculum__cuadricula {
+    display: inline-block;
+    position: relative;
+}
+
+.curriculum__cuadricula::after {
+    content: "";
+    position: absolute;
+    top: 16px;
+    right: -2.7rem;
+    background-image: -webkit-repeating-radial-gradient(
+        center center,
+        var(--color-secondary),
+        var(--color-secondary) 1px,
+        transparent 0px,
+        transparent 100%
+    );
+    width: 50px;
+    height: 30px;
+    background-size: 6px 6px;
+    opacity: 0.5;
+}
+
+.curriculum__subtitle_cuadricula {
+    display: inline-block;
+    position: relative;
+}
+
+.curriculum__subtitle_cuadricula::after {
+    content: "";
+    position: absolute;
+    top: 14px;
+    right: -11px;
+    background-image: -webkit-repeating-radial-gradient(
+        center center,
+        var(--color-secondary),
+        var(--color-secondary) 1px,
+        transparent 0px,
+        transparent 100%
+    );
+    width: 30px;
+    height: 20px;
+    background-size: 6px 6px;
+    opacity: 0.5;
+}
+
+.curriculum__subtitle_color {
+    color: var(--color-secondary);
+}
+
+.progress {
+    border: 1px solid var(--color-secondary);
+    border-radius: 90px;
+}
+
+.progress::-webkit-progress-value {
+    /* Cambia el color de la barra de progreso en navegadores WebKit como Chrome, Edge y Safari */
+    background-color: var(--color-secondary);
+    border-radius: 90px;
+}
+
+.progress::-moz-progress-bar {
+    /* Cambia el color de la barra de progreso en Firefox */
+    background-color: var(--color-principal);
+    border: 1px solid var(--color-principal);
+    border-radius: 90px;
+}
+
+/* permite modificar la parte interna de la barra de progreso */
+.progress::-webkit-progress-bar {
+    background-color: var(--color-principal);
+    border: 1px solid var(--color-principal);
+    border-radius: 90px;
+}
