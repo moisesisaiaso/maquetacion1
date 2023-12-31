@@ -1,3 +1,10 @@
+.page__curriculum {
+    display: flex;
+    column-gap: 40px;
+    margin-bottom: 45px;
+}
+
+/* ^ Estilos compartidos */
 .page__title {
     width: 100%;
     margin-bottom: 30px;
@@ -10,6 +17,7 @@
     width: 100%;
     font-family: "PoppinsMedium";
     font-weight: 500;
+    margin-bottom: 2.2rem;
 }
 
 .curriculum__cuadricula {
@@ -62,9 +70,137 @@
     color: var(--color-secondary);
 }
 
+/** formacion */
+.curriculum__formation_experience {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 59%;
+    row-gap: 45px;
+}
+
+.curriculum__formation {
+}
+.formation__group {
+    display: flex;
+    flex-direction: column;
+    row-gap: 18px;
+}
+
+.formation__studio {
+    display: flex;
+    column-gap: 40px;
+    position: relative;
+}
+
+.formation__studio::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 4px;
+    left: 32%;
+    bottom: -23px;
+    width: 1px;
+    background-color: var(--color-subtitle);
+    opacity: 0.1;
+}
+
+.formation__info {
+    flex-basis: 30%;
+    text-align: end;
+    position: relative;
+}
+
+.formation__info::after {
+    content: "";
+    position: absolute;
+    top: 5px;
+    right: -29px;
+    z-index: 0;
+    background-color: var(--color-secondary);
+    width: 17px;
+    height: 17px;
+    border-radius: 45px;
+    opacity: 0.25;
+}
+.formation__info::before {
+    content: "";
+    position: absolute;
+    top: 9px;
+    right: -25px;
+    z-index: 5;
+    background-color: var(--color-principal);
+    width: 9px;
+    height: 9px;
+    border-radius: 45px;
+    border: 2px solid var(--color-secondary);
+}
+
+.info__place {
+    letter-spacing: 1px;
+}
+
+.formation__info,
+.info__place {
+    font-size: 1.4rem;
+    color: var(--color-subtitle);
+}
+
+.formation__description {
+    flex-basis: 70%;
+}
+
+.info__date {
+    line-height: 25px;
+}
+
+.info__date,
+.description__studyName {
+    margin-bottom: 0.5rem;
+}
+
+/** habilidades  */
+.curriculum__skills {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 41%;
+    row-gap: 35px;
+}
+
+.skills__container {
+}
+
+.skills__group {
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+}
+
+.skills__skill {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.skill__name {
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+}
+.skill__name,
+.skill__porcentage {
+    flex-basis: 50%;
+}
+.skill__porcentage {
+    font-size: 1.3rem;
+    text-align: end;
+    color: var(--color-subtitle);
+}
+
+/** progress bar */
 .progress {
+    width: 100%;
     border: 1px solid var(--color-secondary);
     border-radius: 90px;
+    height: 10px;
 }
 
 .progress::-webkit-progress-value {
@@ -76,13 +212,76 @@
 .progress::-moz-progress-bar {
     /* Cambia el color de la barra de progreso en Firefox */
     background-color: var(--color-principal);
-    border: 1px solid var(--color-principal);
+    border: 2px solid var(--color-principal);
     border-radius: 90px;
 }
 
 /* permite modificar la parte interna de la barra de progreso */
 .progress::-webkit-progress-bar {
     background-color: var(--color-principal);
-    border: 1px solid var(--color-principal);
+    border: 2px solid var(--color-principal);
     border-radius: 90px;
+}
+
+/** áreas de conocimiento */
+
+.knowledges__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    color: var(--color-principal);
+}
+
+.knowledges__option {
+    padding: 0.9rem 1rem;
+    background-color: var(--color-secondary);
+    border-radius: 5px;
+    transition: all 300ms ease-in-out;
+}
+
+.knowledges__option:hover {
+    transform: translateY(-3px);
+    background-color: rgb(239, 241, 247);
+    border: 1px solid rgb(229, 229, 229);
+    color: #262524;
+}
+
+/** certificados */
+
+.certificate__group {
+    display: flex;
+    column-gap: 35px;
+}
+.certificates__certificate {
+    display: flex;
+    border: 2px solid rgba(227, 227, 227, 0.576);
+    border-radius: 1.2rem;
+}
+
+.certificate__logo {
+    background-color: rgba(236, 237, 237, 0.576);
+    padding: 0 1.2rem;
+    display: flex;
+    align-items: center;
+}
+
+.certificate__logo img {
+    width: 8rem;
+}
+
+.certificate__content {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    row-gap: 8px;
+    padding: 2.5rem;
+}
+
+.certificate__title {
+    font-size: 1.6rem;
+}
+
+.certificate__data,
+.certificate__id {
+    color: var(--color-subtitle);
 }

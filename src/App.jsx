@@ -33,6 +33,8 @@ function App() {
         <>
             <Helmet>
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <title>Portafolio</title>
+                <link rel="icon" href={miFoto} />
             </Helmet>
             {/* <!--^ Layput principal --> */}
             <div className={inicioStyles.layout}>
