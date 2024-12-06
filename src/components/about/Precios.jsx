@@ -30,5 +30,5 @@ export const Precios = ({ price }) => {
 };
 
 Precios.propTypes = {
-    precio: PropTypes.object.isRequired,
+    price: PropTypes.object.isRequired,
 };

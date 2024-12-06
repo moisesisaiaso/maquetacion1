@@ -13,5 +13,5 @@ export const Clientes = ({ client }) => {
 };
 
 Clientes.propTypes = {
-    client: PropTypes.array.isRequired,
+    client: PropTypes.string.isRequired,
 };

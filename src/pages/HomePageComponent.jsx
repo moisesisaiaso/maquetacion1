@@ -1,6 +1,6 @@
 import inicioStyles from "../assets/css/inicio.module.css";
 
-const HomePageComponent = () => {
+export const HomePageComponent = () => {
     return (
         <>
             <h1 className={inicioStyles.page__name}>MOISES ORTIZ</h1>

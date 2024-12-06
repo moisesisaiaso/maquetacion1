@@ -1,15 +1,21 @@
-import curriculumStyles from "../../assets/css/curriculum.module.css";
-import { FormacionExperience } from "./FormacionExperience.jsx";
-import { Habilidad } from "./Habilidad.jsx";
+import curriculumStyles from "../assets/css/curriculum.module.css";
+import scrollStyles from "../assets/css/scroll.module.css";
+
+import { FormacionExperience, Habilidad } from "../components/curriculum";
 
 /* Datos para las props */
-import { studies, experiences, skillsDiseño, skillsCodigo } from "./datosCurriculum.js";
+import {
+    studies,
+    experiences,
+    skillsDiseño,
+    skillsCodigo,
+} from "../components/curriculum/datosCurriculum.js";
 
-import certificado from "../../assets/img/certificado-1.png";
+import certificado from "../assets/img/certificado-1.png";
 
-const CurriculumComponent = () => {
+export const CurriculumComponent = () => {
     return (
-        <>
+        <div className={scrollStyles.content__page_scrolling}>
             <h1 className={curriculumStyles.page__title}>
                 <span className={curriculumStyles.curriculum__cuadricula}>Curriculum</span>
             </h1>
@@ -165,7 +171,7 @@ const CurriculumComponent = () => {
                     </div>
                 </section>
             </section>
-        </>
+        </div>
     );
 };
 

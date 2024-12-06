@@ -1,17 +1,15 @@
-import sobreMiStyles from "../../assets/css/sobreMi.module.css";
+import sobreMiStyles from "../assets/css/sobreMi.module.css";
+import scrollStyles from "../assets/css/scroll.module.css";
 
 /* datos para las props */
-import { testimonials, clients, prices, extras } from "./datos.js";
+import { testimonials, clients, prices, extras } from "../components/about/datos.js";
 
 /* components hijos*/
-import { Testimonials } from "./Testimonials";
-import { Clientes } from "./Clientes";
-import { Precios } from "./Precios";
-import { Extra } from "./Extra.jsx";
+import { Testimonials, Clientes, Precios, Extra } from "../components/about";
 
 export const SobreMiComponent = () => {
     return (
-        <>
+        <div className={scrollStyles.content__page_scrolling}>
             {/* sobre Mi */}
             <section className={sobreMiStyles.page__about}>
                 <h1 className={sobreMiStyles.about__title}>
@@ -156,7 +154,7 @@ export const SobreMiComponent = () => {
                     ))}
                 </div>
             </section>
-        </>
+        </div>
     );
 };
 

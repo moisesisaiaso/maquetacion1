@@ -1,0 +1,90 @@
+.page__portafolio {
+    display: flex;
+    column-gap: 40px;
+    margin-bottom: 45px;
+}
+
+/* ^ Estilos compartidos */
+.page__title {
+    width: 100%;
+    margin-bottom: 30px;
+    font-size: 3.2rem;
+    font-family: "PoppinsMedium";
+    font-weight: 500;
+}
+
+.portafolio__subtitle {
+    width: 100%;
+    font-family: "PoppinsMedium";
+    font-weight: 500;
+    margin-bottom: 2.2rem;
+}
+
+.portafolio__cuadricula {
+    display: inline-block;
+    position: relative;
+}
+
+.portafolio__cuadricula::after {
+    content: "";
+    position: absolute;
+    top: 16px;
+    right: -2.7rem;
+    background-image: -webkit-repeating-radial-gradient(
+        center center,
+        var(--color-secondary),
+        var(--color-secondary) 1px,
+        transparent 0px,
+        transparent 100%
+    );
+    width: 50px;
+    height: 30px;
+    background-size: 6px 6px;
+    opacity: 0.5;
+}
+
+.portafolio__subtitle_cuadricula {
+    display: inline-block;
+    position: relative;
+}
+
+.portafolio__subtitle_cuadricula::after {
+    content: "";
+    position: absolute;
+    top: 14px;
+    right: -11px;
+    background-image: -webkit-repeating-radial-gradient(
+        center center,
+        var(--color-secondary),
+        var(--color-secondary) 1px,
+        transparent 0px,
+        transparent 100%
+    );
+    width: 30px;
+    height: 20px;
+    background-size: 6px 6px;
+    opacity: 0.5;
+}
+
+.portafolio__subtitle_color {
+    color: var(--color-secondary);
+}
+
+/** navbar */
+.portafolio__menu {
+    display: flex;
+    column-gap: 1.5rem;
+}
+
+.option__link {
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.option__active {
+    opacity: 1;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+    transition: all 130ms ease-in-out;
+}

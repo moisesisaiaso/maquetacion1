@@ -14,5 +14,5 @@ export const Extra = ({ extra }) => {
 };
 
 Extra.propTypes = {
-    extra: PropTypes.array.isRequired,
+    extra: PropTypes.object.isRequired,
 };
