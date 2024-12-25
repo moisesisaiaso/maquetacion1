@@ -1,15 +1,24 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import portafolioStyles from "../assets/css/portafolio.module.css";
 import scrollStyles from "../assets/css/scroll.module.css";
-import { useLocation } from "react-router-dom";
+import { Gallery } from "../components/portafolio";
+
+import { gallery } from "../components/portafolio/datos.js";
 
 export const PortafolioComponent = () => {
-    const location = useLocation();
-    const currentPath = location.pathname;
-
     const [optionMenu, setOptionMenu] = useState("Todo");
+    const [filterGallery, setFilterGallery] = useState(gallery);
 
-    const menuOptions = ["Todo", "Cursos", "Web", "Redes Sociales", "Videos", "Proyectos"];
+    const menuOptions = ["Todo", "Páginas", "Aplicaciones", "Herramientas y Utilidades", "Videos"];
+
+    useEffect(() => {
+        if (optionMenu === "Todo") {
+            setFilterGallery(gallery);
+        } else {
+            const newGallery = gallery.filter((gallery) => gallery.category.includes(optionMenu));
+            setFilterGallery(newGallery);
+        }
+    }, [optionMenu]);
 
     return (
         <div className={scrollStyles.content__page_scrolling}>
@@ -35,7 +44,11 @@ export const PortafolioComponent = () => {
                     ))}
                 </ul>
             </nav>
-            <section className={portafolioStyles.portafolio}></section>
+            <section className={portafolioStyles.portafolio__gallery}>
+                {filterGallery?.map((project, i) => (
+                    <Gallery project={project} key={i} />
+                ))}
+            </section>
         </div>
     );
 };

@@ -7,19 +7,19 @@
     font-weight: 500;
 }
 
-.portafolio__subtitle {
+.blog__subtitle {
     width: 100%;
     font-family: "PoppinsMedium";
     font-weight: 500;
     margin-bottom: 2.2rem;
 }
 
-.portafolio__cuadricula {
+.blog__cuadricula {
     display: inline-block;
     position: relative;
 }
 
-.portafolio__cuadricula::after {
+.blog__cuadricula::after {
     content: "";
     position: absolute;
     top: 16px;
@@ -37,12 +37,12 @@
     opacity: 0.5;
 }
 
-.portafolio__subtitle_cuadricula {
+.blog__subtitle_cuadricula {
     display: inline-block;
     position: relative;
 }
 
-.portafolio__subtitle_cuadricula::after {
+.blog__subtitle_cuadricula::after {
     content: "";
     position: absolute;
     top: 14px;
@@ -60,31 +60,12 @@
     opacity: 0.5;
 }
 
-.portafolio__subtitle_color {
+.blog__subtitle_color {
     color: var(--color-secondary);
 }
 
-/** navbar */
-.portafolio__menu {
-    display: flex;
-    column-gap: 2rem;
-}
-
-.option__link {
-    cursor: pointer;
-    opacity: 0.5;
-}
-
-.option__active {
-    opacity: 1;
-    text-decoration: underline;
-    text-decoration-thickness: 2px;
-    text-underline-offset: 4px;
-    transition: all 130ms ease-in-out;
-}
-
 /** galeria */
-.portafolio__gallery {
+.blog__gallery {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -94,11 +75,13 @@
 }
 .gallery__item {
     position: relative;
-    width: 24rem;
+    width: 37rem;
 }
 
-.portafolio__container_image {
+.blog__container_image {
+    height: 18.5rem;
     overflow: hidden;
+    position: relative;
 }
 
 .gallery__image {
@@ -107,24 +90,39 @@
     height: 100%;
 }
 
+.blog__icon {
+    position: absolute;
+    z-index: 5;
+    top: calc(50% - 2.2rem);
+    left: calc(50% - 2.2rem);
+    font-size: 4.4rem;
+    color: white;
+    opacity: 0;
+}
+
 .gallery__item:hover .gallery__image {
     transform: scale(1.1);
 }
 
-.gallery__title {
-    margin: 1rem 0rem;
-    font-weight: bold;
+.gallery__info {
+    border: 1px solid rgb(229, 223, 223);
+    padding: 1.5rem;
 }
 
-.gallery__technologies {
-    display: flex;
-    flex-wrap: wrap;
-    column-gap: 2rem;
-    row-gap: 1rem;
+.gallery__date {
+    color: gray;
+    font-size: 1.3rem;
+}
+
+.gallery__title {
+    margin: 0.5rem 0rem 1rem 0rem;
+    font-size: 1.9rem;
+    font-weight: bolder;
 }
 
 .gallery__etiqueta {
     position: absolute;
+
     opacity: 0;
     top: 7px;
     left: 10px;
@@ -134,6 +132,10 @@
 }
 
 .gallery__item:hover .gallery__etiqueta {
+    opacity: 1;
+    transform: scale(1.1);
+}
+.gallery__item:hover .blog__icon {
     opacity: 1;
     transform: scale(1.1);
 }
