@@ -12,24 +12,6 @@ export const BlogComponent = () => {
                 <span className={blogStyles.blog__cuadricula}>Blog</span>
             </h1>
 
-            {/* <nav className={blogStyles.blog__navbar}>
-                <ul className={blogStyles.blog__menu}>
-                    {menuOptions.map((option, i) => (
-                        <li className={blogStyles.blog__option} key={i}>
-                            <a
-                                className={
-                                    blogStyles.option__link +
-                                    " " +
-                                    `${optionMenu === option && blogStyles.option__active}`
-                                }
-                                onClick={() => setOptionMenu(option)}
-                            >
-                                {option}
-                            </a>
-                        </li>
-                    ))}
-                </ul>
-            </nav> */}
             <section className={blogStyles.blog__gallery}>
                 {blogData.map((blog, i) => (
                     <Gallery blog={blog} key={i} />

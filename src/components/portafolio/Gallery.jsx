@@ -1,17 +1,16 @@
 import React from "react";
 import portafolioStyles from "../../assets/css/portafolio.module.css";
-import { FaReact } from "react-icons/fa";
 import { LiaYarn } from "react-icons/lia";
-import { SiCssmodules } from "react-icons/si";
-import { SiReactrouter } from "react-icons/si";
 import { FaHtml5 } from "react-icons/fa6";
-import { FaCss3Alt } from "react-icons/fa";
-import { FaJsSquare } from "react-icons/fa"; //js
-import { FaNodeJs } from "react-icons/fa";
-import { SiExpress } from "react-icons/si";
-import { SiSequelize } from "react-icons/si";
+import { FaCss3Alt, FaJsSquare, FaNodeJs, FaReact } from "react-icons/fa"; //css - js
+import {
+    SiExpress,
+    SiSequelize,
+    SiJsonwebtokens,
+    SiCssmodules,
+    SiReactrouter,
+} from "react-icons/si";
 import { BiLogoPostgresql } from "react-icons/bi";
-import { SiJsonwebtokens } from "react-icons/si";
 
 const allTechnologies = {
     FaReact,
@@ -22,9 +21,9 @@ const allTechnologies = {
     FaCss3Alt,
     FaJsSquare,
     FaNodeJs,
+    BiLogoPostgresql,
     SiExpress,
     SiSequelize,
-    BiLogoPostgresql,
     SiJsonwebtokens,
 };
 
