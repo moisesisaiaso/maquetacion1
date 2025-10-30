@@ -1,3 +1,4 @@
+export * from "./Actividades";
 export * from "./Clientes";
 export * from "./Extra";
 export * from "./Precios";

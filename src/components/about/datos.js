@@ -7,6 +7,33 @@ import cliente3 from "../../assets/img/cliente-3.png";
 import cliente4 from "../../assets/img/cliente-4.png";
 import cliente5 from "../../assets/img/cliente-5.png";
 
+export const activities = [
+    {
+        icon: "fa fa-code",
+        title: "Programación",
+        description:
+            "Lorem ipsum dolor sit amet consectetur elit. A voluptatum, neque, aliquid dolorum ab quaerat cum totam illo aspernatur dicta qui animi dolorem debitis nesciunt fuga consequatur iste voluptas et culpa nam. Ratione ex voluptates laboriosam quae natus fuga quidem. ",
+    },
+    {
+        icon: "fa fa-chalkboard-teacher",
+        title: "Estudiar",
+        description:
+            "Lorem ipsum dolor sit amet consectetur elit. A voluptatum, neque, aliquid dolorum ab quaerat cum totam illo aspernatur dicta qui animi dolorem debitis nesciunt fuga consequatur iste voluptas et culpa nam. Ratione ex voluptates laboriosam quae natus fuga quidem.",
+    },
+    {
+        icon: "fa fa-computer",
+        title: "Desarrollo Web",
+        description:
+            "Lorem ipsum dolor sit amet consectetur elit. A voluptatum, neque, aliquid dolorum ab quaerat cum totam illo aspernatur dicta qui animi dolorem debitis nesciunt fuga consequatur iste voluptas et culpa nam. Ratione ex voluptates laboriosam quae natus fuga quidem.",
+    },
+    {
+        icon: "fa-solid fa-terminal",
+        title: "Automatizaciones",
+        description:
+            "Lorem ipsum dolor sit amet consectetur elit. A voluptatum, neque, aliquid dolorum ab quaerat cum totam illo aspernatur dicta qui animi dolorem debitis nesciunt fuga consequatur iste voluptas et culpa nam. Ratione ex voluptates laboriosam quae natus fuga quidem.",
+    },
+];
+
 export const testimonials = [
     {
         image: testimonio1,

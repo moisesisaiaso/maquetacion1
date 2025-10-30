@@ -1,6 +1,9 @@
 import React from "react";
 import scrollStyles from "../assets/css/scroll.module.css";
 import contactStyles from "../assets/css/contact.module.css";
+import { helix } from "ldrs";
+helix.register("my-loading");
+
 import { datos } from "../components/contact/datos.js";
 import { Card } from "../components/contact/Card.jsx";
 import { Form } from "../components/contact/Form.jsx";
@@ -20,6 +23,8 @@ export const ContactoComponent = () => {
                     ))}
                 </aside>
                 <div className={contactStyles.contact__map}>
+                    <my-loading className={contactStyles.custom__loader} color="#04b4e0" />
+
                     <iframe
                         frameborder="0"
                         scrolling="0"
@@ -30,6 +35,7 @@ export const ContactoComponent = () => {
                         referrerpolicy="no-referrer-when-downgrade"
                         width="100%"
                         height="100%"
+                        zoom="50px"
                     ></iframe>
                 </div>
                 <div className={contactStyles.contact__formulario}>

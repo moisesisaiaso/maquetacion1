@@ -2,7 +2,7 @@
 :root {
     --color-principal: #ffffff;
     --color-secondary: #04b4e0;
-    --color-background: #f2f7f9;
+    --color-background: rgb(189, 219, 218);
     --color-transparent: transparent;
     --color-icon: #b5b6b7;
     --color-subtitle: #888888;
@@ -47,8 +47,8 @@ h6 {
 .layout {
     position: relative;
     display: grid;
-    min-width: 1120px;
-    width: 75%;
+    min-width: auto;
+    width: 85%;
     height: 85vh;
     min-height: 85vh;
     margin: 10vh 6.2%;
@@ -57,6 +57,15 @@ h6 {
     box-shadow: 0px 0px 100px -5px rgba(0, 0, 0, 0.25);
     border-radius: 4rem;
 }
+
+.layout__mascara {
+    display: none;
+    position: absolute;
+    z-index: 4;
+    width: 100vw;
+    height: 100vh;
+}
+
 /** Barra lateral azul */
 .layout__aside {
     font-weight: 400;
@@ -64,6 +73,10 @@ h6 {
     box-shadow: 0px 0px 50px rgb(226, 211, 211);
     border-radius: 4rem 0 0 4rem;
     overflow-x: hidden;
+}
+
+.aside__iconClose {
+    display: none !important;
 }
 
 .aside__user_info {
@@ -187,6 +200,11 @@ h6 {
     grid-area: layoutContent;
     background-color: var(--color-secondary);
     border-radius: 0 6rem 6rem 0;
+    position: relative;
+}
+
+.content__icon_menu {
+    display: none !important;
 }
 
 /** estilos para el home de la seccion main */
@@ -260,6 +278,7 @@ h6 {
 
 .menu__overlay {
     position: absolute;
+    z-index: 10;
     opacity: 0;
     right: 0%;
     margin-top: -3.4rem;
@@ -273,4 +292,158 @@ h6 {
 .menu__option:hover .menu__overlay {
     opacity: 1;
     right: 100%; /* esto aplica el 100% del ancho como margen hacia la hizquierda del elemento lo que hace que salga del contenedor */
+}
+
+/*Responsive general*/
+@media (max-width: 1080px) {
+    .layout {
+        width: 89%;
+        margin-left: 2.3rem;
+    }
+}
+
+/*Responsive*/
+@media (max-width: 960px) {
+    body {
+        background-image: none;
+        position: static;
+    }
+
+    .layout {
+        width: 100vw;
+        height: 100vh !important;
+        margin: 0;
+        padding: 0;
+        border-radius: 0;
+        grid-template-areas: "layoutContent";
+        grid-template-columns: 100%;
+    }
+
+    .layout__content {
+        border-radius: 0;
+        background-color: white;
+        height: 100vh;
+    }
+
+    .layout__menu {
+        position: static;
+    }
+
+    .content__icon_menu {
+        display: block !important;
+        position: absolute;
+        color: var(--color-principal);
+        border-radius: 95rem;
+        width: 5.5rem;
+        height: 5.5rem;
+        background-color: var(--color-secondary);
+        font-size: 3.5rem;
+        text-align: center;
+        line-height: 50px !important;
+        z-index: 5;
+        top: 3rem;
+        right: 3rem;
+        cursor: pointer;
+    }
+
+    .layout__aside {
+        position: absolute;
+        z-index: 10;
+        border-radius: 0;
+        height: 100%;
+        overflow-y: scroll;
+        right: 0rem;
+        width: 32rem;
+    }
+
+    /*menu aside open*/
+    .layout__aside.layout__aside_open {
+        right: 0rem !important;
+        animation: nav 500ms alternate;
+    }
+
+    @keyframes nav {
+        from {
+            transform: translateX(100%);
+        }
+    }
+
+    /*menu aside close*/
+    .layout__aside.layout__aside_close {
+        right: -32rem !important;
+        animation: nav2 500ms reverse;
+    }
+
+    @keyframes nav2 {
+        from {
+            transform: translateX(100%);
+        }
+        to {
+            transform: translateX(-100%);
+        }
+    }
+
+    .layout__mascara.layout__mascara_activa {
+        display: block;
+    }
+
+    .aside__iconClose {
+        display: block !important;
+        position: absolute;
+        font-size: 2.5rem;
+        color: var(--color-principal);
+        top: 2rem;
+        right: 2rem;
+        z-index: 11;
+        cursor: pointer;
+    }
+
+    .menu__icon {
+        display: none !important;
+    }
+
+    .layout__menu {
+        width: 100%;
+        padding: 0 !important;
+    }
+
+    .menu__list {
+        width: 100%;
+        margin: 0 !important;
+        padding: 2rem 0 !important;
+        text-align: center;
+        background-color: var(--color-secondary);
+        border-radius: 0;
+        box-shadow: none;
+        text-align: center;
+        align-items: center;
+        height: auto;
+        row-gap: 2.5rem;
+    }
+
+    .menu__overlay {
+        font-size: 1.6rem;
+        position: static !important;
+        opacity: 1;
+        color: var(--color-principal) !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .menu__overlay.menu__active {
+        text-decoration: underline;
+        text-decoration-thickness: 3px;
+        text-underline-offset: 6px;
+    }
+}
+
+@media (max-width: 710px) {
+    .page__name {
+        font-size: 4rem;
+    }
+
+    .page__job {
+        font-size: 2.5rem;
+        font-weight: lighter;
+    }
 }

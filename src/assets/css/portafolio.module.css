@@ -94,7 +94,11 @@
 }
 .gallery__item {
     position: relative;
-    width: 24rem;
+    flex-basis: calc(50% - 2rem);
+    flex-grow: 1;
+    flex-shrink: 1;
+    max-width: 37rem;
+    min-width: 19rem;
 }
 
 .portafolio__container_image {
@@ -136,4 +140,13 @@
 .gallery__item:hover .gallery__etiqueta {
     opacity: 1;
     transform: scale(1.1);
+}
+
+/*Responsive*/
+
+@media (max-width: 730px) {
+    .portafolio__menu {
+        flex-wrap: wrap;
+        row-gap: 1rem;
+    }
 }

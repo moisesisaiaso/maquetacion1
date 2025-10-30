@@ -46,11 +46,23 @@ export const Nav = () => {
                             {({ isActive }) => (
                                 <>
                                     <i
-                                        className={`${inicioStyles.menu__icon} ${icon} ${
-                                            isActive ? inicioStyles.menu__icon_active : ""
+                                        className={`${
+                                            inicioStyles.menu__icon
+                                        } ${icon} ${
+                                            isActive
+                                                ? inicioStyles.menu__icon_active
+                                                : ""
                                         }`}
                                     ></i>
-                                    <span className={inicioStyles.menu__overlay}>{name}</span>
+                                    <span
+                                        className={
+                                            isActive
+                                                ? `${inicioStyles.menu__overlay} ${inicioStyles.menu__active}`
+                                                : inicioStyles.menu__overlay
+                                        }
+                                    >
+                                        {name}
+                                    </span>
                                 </>
                             )}
                         </NavLink>
