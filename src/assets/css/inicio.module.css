@@ -64,6 +64,8 @@ h6 {
     z-index: 4;
     width: 100vw;
     height: 100vh;
+    background: rgb(255, 255, 255, 0.1);
+    backdrop-filter: blur(2px);
 }
 
 /** Barra lateral azul */
@@ -305,22 +307,27 @@ h6 {
 /*Responsive*/
 @media (max-width: 960px) {
     body {
-        height: auto;
+        height: 100%;
         width: 100%;
         background-image: none;
         position: static;
         overflow: hidden;
+        background-color: white;
     }
 
     .layout {
+        overflow-x: hidden;
+        overflow-y: auto; /*Esta propiedad con su valor es la que permite que se muestre el contenido que se se tapa por la barra del navegador de esta forma se adapta a un scroll visible al viewport*/
         width: 100%;
-        height: 100% !important;
+        height: 100% !important; /*para que overflow-y: auto funcione correctamente en este caso debe ser en porcentajes no en vh */
+        position: fixed; /*y este tambien*/
         margin: 0;
         padding: 0;
+        bottom: 0;
         border-radius: 0;
         grid-template-areas: "layoutContent";
         grid-template-columns: 100%;
-        overflow: hidden;
+        scroll-padding-bottom: 100px !important; /* espacio para el teclado */
     }
 
     .layout__content {
@@ -357,7 +364,7 @@ h6 {
         height: 100%;
         overflow-y: scroll;
         right: 0rem;
-        width: 32rem;
+        width: 27.5rem;
     }
 
     /*menu aside open*/
@@ -374,7 +381,7 @@ h6 {
 
     /*menu aside close*/
     .layout__aside.layout__aside_close {
-        right: -32rem !important;
+        right: -27.5rem !important;
         animation: nav2 500ms reverse;
     }
 
@@ -442,10 +449,6 @@ h6 {
 }
 
 @media (max-width: 710px) {
-    .layout__aside {
-        width: -65%;
-    }
-
     .aside__user_info {
         min-width: 0 !important;
     }
@@ -457,5 +460,11 @@ h6 {
     .page__job {
         font-size: 2.5rem;
         font-weight: lighter;
+    }
+}
+
+@media (max-width: 380px) {
+    .layout__aside {
+        width: 65% !important;
     }
 }
