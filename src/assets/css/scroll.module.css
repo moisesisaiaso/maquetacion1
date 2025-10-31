@@ -78,6 +78,7 @@
     .content__page_scrolling {
         overflow: auto;
         scrollbar-width: none;
+        padding: 3rem;
     }
 
     .content__page_scrolling::-webkit-scrollbar {
